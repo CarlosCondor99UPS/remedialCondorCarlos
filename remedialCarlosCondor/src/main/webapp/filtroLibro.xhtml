@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition
+	template="paginaBlanco.xhtml">
+	<ui:define name="title">
+        Filtrar Libros
+    </ui:define>
+	<ui:define name="content">
+		<h:form>		            
+		
+		Categoria ID:
+		<div class="search-field d-none d-xl-block">
+              <div class="input-group">
+                <div class="input-group-prepend bg-transparent">
+                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                </div>
+					<h:inputText class="search-field d-none d-xl-block"   value="#{libroBean.filtroCategoria}"/>
+           			<h:commandButton type="submit" class="btn btn-primary mr-2" action="#{libroBean.filtrarLibrosxCategoria()}" value="Buscar"/>
+              </div>
+          </div>
+           	
+			<h:dataTable class="table table-hover" value="#{libroBean.libros}" var="libro">
+				<h:column>
+					<f:facet name="header">Nombre</f:facet>
+					#{libro.nombre}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Descripcion</f:facet>
+					#{libro.descripcion}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Editorial</f:facet>
+					#{libro.editorial}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Stock</f:facet>
+					#{libro.stock}
+				</h:column>
+				
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>
+
+
+

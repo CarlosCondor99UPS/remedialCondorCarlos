@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<ui:composition
+	template="paginaBlanco.xhtml">
+	<ui:define name="CrearLibro">
+	</ui:define>
+	<ui:define name="content">
+		<h:form class="forms-sample">
+			<div class="form-group">
+				<label for="exampleInputName1">Nombre</label> 
+				<h:inputText class="form-control" id="exampleInputName1" value="#{libroBean.libro.nombre}" />
+			</div>
+			<div class="form-group">
+				<label for="exampleInputName2">Descripcion</label> 
+				<h:inputText class="form-control" id="exampleInputName2" value="#{libroBean.libro.descripcion}" />
+			</div>
+			<div class="form-group">
+				<label for="exampleInputName3">Editorial</label> 
+				<h:inputText  class="form-control" id="exampleInputName3" value="#{libroBean.libro.editorial}" />
+			</div>
+			<div class="form-group">
+				<label for="exampleInputName4">Stock</label> 
+				<h:inputText  class="form-control" id="exampleInputName4" value="#{libroBean.libro.stock}"  />
+			</div>
+			<div class="form-group">
+				<label for="exampleInputName4">Nombre de la categoria</label> 
+				<h:inputText  class="form-control" id="exampleInputName5" value="#{libroBean.nombreCategoria}"  />
+			</div>
+			<div class="form-group">
+				<label for="exampleInputName4">Id del Autor</label> 
+				<h:inputText  class="form-control" id="exampleInputName6" value="#{libroBean.idAutor}"  />
+				<h:commandButton type="submit" class="btn btn-primary mr-2" action="#{libroBean.addAutor()}" value="Guardar Autor"/>	
+			</div>
+			
+			<h:commandButton type="submit" class="btn btn-primary mr-2" action="#{libroBean.saveLibro()}" value="Guardar"/>
+		</h:form>
+
+
+
+	</ui:define>
+
+</ui:composition>
+</html>
+
